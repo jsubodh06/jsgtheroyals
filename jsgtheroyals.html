@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>JSG The Royals — Coming Soon</title>
+
+  <!-- Google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#0f1724;        /* dark navy */
+      --accent:#d4af37;    /* gold */
+      --muted:#98a0b3;
+      --glass: rgba(255,255,255,0.04);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(180deg, #071026 0%, var(--bg) 100%);
+      color: #fff;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:24px;
+    }
+
+    .card{
+      width:100%;
+      max-width:920px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+      border-radius:16px;
+      padding:48px;
+      box-shadow: 0 10px 30px rgba(2,6,23,0.6);
+      border: 1px solid rgba(255,255,255,0.04);
+      display:grid;
+      grid-template-columns: 1fr 340px;
+      gap:28px;
+      align-items:center;
+    }
+
+    .brand{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+    .monogram{
+      width:64px;height:64px;border-radius:12px;
+      display:flex;align-items:center;justify-content:center;
+      font-family:"Playfair Display", serif;
+      font-weight:700;
+      font-size:28px;
+      color:var(--bg);
+      background: linear-gradient(180deg, var(--accent), #c89f2f);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+    }
+    h1{
+      font-family:"Playfair Display", serif;
+      margin:0;
+      font-size:34px;
+      letter-spacing:0.6px;
+      color: #fff;
+    }
+    p.lead{
+      margin:0;
+      color:var(--muted);
+      font-size:16px;
+      max-width:60ch;
+      line-height:1.5;
+    }
+
+    .right{
+      background: var(--glass);
+      padding:20px;
+      border-radius:12px;
+      text-align:center;
+      border: 1px solid rgba(255,255,255,0.02);
+    }
+
+    .countdown{
+      display:flex;
+      gap:10px;
+      justify-content:center;
+      margin:14px 0 8px;
+    }
+    .countdown .seg{
+      background:rgba(255,255,255,0.03);
+      padding:10px 14px;
+      border-radius:8px;
+      min-width:64px;
+    }
+    .num{font-size:20px;font-weight:600}
+    .lbl{font-size:11px;color:var(--muted);margin-top:6px}
+
+    .email{
+      margin-top:18px;
+      display:flex;
+      gap:8px;
+      justify-content:center;
+      align-items:center;
+    }
+    .email a{
+      color:var(--accent);
+      text-decoration:none;
+      font-weight:600;
+      background:transparent;
+    }
+
+    footer{
+      grid-column:1/-1;
+      text-align:center;
+      color:var(--muted);
+      margin-top:18px;
+      font-size:13px;
+    }
+
+    @media (max-width:820px){
+      .card{grid-template-columns:1fr; padding:28px;}
+      .right{order:-1;margin-bottom:6px}
+    }
+  </style>
+</head>
+<body>
+  <div class="card" role="region" aria-label="Coming soon JSG The Royals">
+    <div class="brand">
+      <div class="logo">
+        <div class="monogram">JSG</div>
+        <div>
+          <h1>JSG The Royals</h1>
+          <div style="color:var(--muted);font-size:13px;margin-top:6px">A new experience coming soon</div>
+        </div>
+      </div>
+
+      <p class="lead">
+        We are crafting something special for our community — exclusive events, member experiences and stories.
+        Join the waitlist or contact us and we’ll notify you when we launch.
+      </p>
+
+      <div style="margin-top:18px;">
+        <!-- Optional newsletter form (if you later integrate) -->
+        <form onsubmit="event.preventDefault(); alert('Thank you! We will reach out soon.');" aria-label="Join waitlist">
+          <input type="email" placeholder="Your email address" required
+                 style="width:100%;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:#fff;outline:none;font-size:14px" />
+          <div style="height:10px"></div>
+          <button style="width:100%;padding:12px;border-radius:10px;border:0;background:linear-gradient(90deg,var(--accent),#c89f2f);color:var(--bg);font-weight:700;cursor:pointer">
+            Join Waitlist
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div class="right" aria-hidden="false">
+      <div style="font-size:13px;color:var(--muted);font-weight:600">Launching in</div>
+
+      <div class="countdown" id="countdown">
+        <div class="seg"><div class="num" id="days">00</div><div class="lbl">Days</div></div>
+        <div class="seg"><div class="num" id="hours">00</div><div class="lbl">Hours</div></div>
+        <div class="seg"><div class="num" id="mins">00</div><div class="lbl">Mins</div></div>
+        <div class="seg"><div class="num" id="secs">00</div><div class="lbl">Secs</div></div>
+      </div>
+
+      <div class="email">
+        <div style="color:var(--muted);font-size:13px">Contact us:</div>
+        <a href="mailto:connect@jsgtheroyals.com">connect@jsgtheroyals.com</a>
+      </div>
+    </div>
+
+    <footer>© <strong>JSG The Royals</strong> — All rights reserved</footer>
+  </div>
+
+  <script>
+    // Set your launch date here (UTC). Example: 2026-01-01T00:00:00Z
+    const launchDate = new Date('2026-01-01T00:00:00Z').getTime();
+
+    function updateCountdown(){
+      const now = Date.now();
+      let diff = Math.max(0, launchDate - now);
+      const secs = Math.floor((diff/1000) % 60);
+      const mins = Math.floor((diff/1000/60) % 60);
+      const hours = Math.floor((diff/1000/60/60) % 24);
+      const days = Math.floor(diff/1000/60/60/24);
+      document.getElementById('days').textContent = String(days).padStart(2,'0');
+      document.getElementById('hours').textContent = String(hours).padStart(2,'0');
+      document.getElementById('mins').textContent = String(mins).padStart(2,'0');
+      document.getElementById('secs').textContent = String(secs).padStart(2,'0');
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
+</body>
+</html>
