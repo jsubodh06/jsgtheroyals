@@ -1,4 +1,4 @@
-# Welcome to your subodh project
+# Welcome to your subodh jain project
 
 
 ## Project info
