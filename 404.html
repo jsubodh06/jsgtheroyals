@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="refresh" content="0;URL=/" />
+    <title>Redirecting…</title>
+  </head>
+  <body>
+    Redirecting...
+    <script>
+      (function () {
+        var base = "/"; // change to '/REPO_NAME/' if deploying to https://username.github.io/REPO_NAME/
+        var path = location.pathname.replace(base, "");
+        location.href = base + "#!" + path + location.search + location.hash;
+      })();
+    </script>
+  </body>
+</html>
